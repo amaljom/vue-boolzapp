@@ -46,10 +46,10 @@
                     <ul class="ps pt-2">
                         <li v-for="(contact, index) in contacts" class=" pt-1 list-dec d-flex border-bottom">
                             <div>
-                                <img class="img-setting" src="avatar" :src="contacts[index].avatar" alt="Non trovato">
+                                <img class="img-setting" :src="'./img/avatar'+contacts[index].avatar+'.jpg'" alt="Non trovato">
                             </div>
                             <div class="ps-2">
-                                <h2 class="fs-5 my-0">Michele</h2>
+                                <h2 class="fs-5 my-0">{{ contacts[index].name }}</h2>
                                 <p class="font">ultimo messaggio inviato</p>
                             </div>
                             <div class="padd">
