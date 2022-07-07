@@ -15,8 +15,8 @@
 <!-- ? CREIAMO UN DIV CON ID DA AGGANCIARE CON VUE.JS -->
     <div id="root" class="container-fluid">
     <!-- ? QUA DENTRO OPERIAMO E SCRIVIAMO TUTTO L' HTML DI CUI AVREMO BISOGNO -->
-        <div class="container col-10 d-flex">
-            <div class="col-4 bg-danger alt">
+        <div class="container  col-10 d-flex">
+            <div class="col-4 bg-light alt">
                 <div class="nav border-end"></div>
                 <!-- ! notifiche -->
                 <div class="bg d-flex ps">
@@ -44,9 +44,9 @@
                <!-- ! inserisco dinamicamente le chat -->
                 <div class="scroll">
                     <ul class="ps pt-2">
-                        <li v-for="(contact, index) in contacts" class=" pt-1 list-dec d-flex">
+                        <li v-for="(contact, index) in contacts" class=" pt-1 list-dec d-flex border-bottom">
                             <div>
-                                <img class="img-setting" src="./img/avatar_1.jpg" alt="Non trovato">
+                                <img class="img-setting" src="avatar" :src="contacts[index].avatar" alt="Non trovato">
                             </div>
                             <div class="ps-2">
                                 <h2 class="fs-5 my-0">Michele</h2>
