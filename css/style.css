@@ -1,0 +1,13 @@
+.container{
+    background-color: beige;
+    height: 820px;
+    margin-top: 2rem;
+    padding: 0;
+}
+.alt{
+    height: 820px;
+}
+.nav{
+    height: 45px;
+    background-color: rgb(219, 219, 219);
+}
