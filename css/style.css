@@ -48,3 +48,9 @@
 .ps{
     padding-left: 12px;
 }
+.padd{
+    padding-left: 115px;
+}
+.scroll{
+    overflow-y: scroll;
+}

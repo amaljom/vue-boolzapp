@@ -42,15 +42,18 @@
                     
                 </div>
                <!-- ! inserisco dinamicamente le chat -->
-                <div>
+                <div class="scroll">
                     <ul class="ps pt-2">
-                        <li class="list-dec d-flex">
+                        <li v-for="(contact, index) in contacts" class=" pt-1 list-dec d-flex">
                             <div>
                                 <img class="img-setting" src="./img/avatar_1.jpg" alt="Non trovato">
                             </div>
-                            <div>
-                                <h2 class="fs-4">Michele</h2>
+                            <div class="ps-2">
+                                <h2 class="fs-5 my-0">Michele</h2>
                                 <p class="font">ultimo messaggio inviato</p>
+                            </div>
+                            <div class="padd">
+                                <p >12:30</p>
                             </div>
                         </li>
                     </ul>
