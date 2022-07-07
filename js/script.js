@@ -172,7 +172,9 @@ const app= new Vue(
     },
 
     methods:{
-
+        indexChange:function(i){
+            this.indexActive=i;
+        }
     }
 
 

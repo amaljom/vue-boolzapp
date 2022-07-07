@@ -44,9 +44,9 @@
                <!-- ! inserisco dinamicamente le chat -->
                 <div class="scroll">
                     <ul class="ps pt-2">
-                        <li v-for="(contact, index) in contacts" class=" pt-1 list-dec d-flex border-bottom">
+                        <li @click="indexChange(index)" v-for="(contact, index) in contacts" class="pt-1 list-dec d-flex border-bottom" :class="(index===indexActive)? 'bgActive': ''">
                             <div>
-                                <img class="img-setting" :src="'./img/avatar'+contacts[index].avatar+'.jpg'" alt="Non trovato">
+                                <img class="img-setting" if :src="'./img/avatar'+contacts[index].avatar+'.jpg'" alt="Non trovato">
                             </div>
                             <div class="ps-2">
                                 <h2 class="fs-5 my-0">{{ contact.name }}</h2>
@@ -68,7 +68,7 @@
                         <div 
                          v-for="(mes,ind) in contacts[indexActive].messages"
                          class="mb-2 d-flex messagio justify-content-between"
-                         :class="(mes.status===sent)? 'sent': ''">
+                         :class="(mes.status==='sent')? 'sent': ''">
                             <div> 
                                 <p class="fs-5">{{mes.message}}</p>
                             </div>

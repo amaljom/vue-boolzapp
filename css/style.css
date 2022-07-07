@@ -45,6 +45,10 @@
 .list-dec{
     list-style: none;
 }
+.list-dec:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
 .ps{
     padding-left: 12px;
 }
@@ -82,4 +86,7 @@
 }
 .font2{
     font-size: 10px;
+}
+.bgActive{
+    background-color: rgb(201, 201, 201);
 }
