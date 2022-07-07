@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .container{
     background-color: beige;
     height: 820px;
@@ -8,6 +14,37 @@
     height: 820px;
 }
 .nav{
-    height: 45px;
+    height: 65px;
     background-color: rgb(219, 219, 219);
+}
+.round{
+    height: 47px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+}
+.father-container{
+    height: 50px;
+    background-color:rgb(219, 219, 219);
+    padding: 5px;
+}
+
+.font{
+    font-size: 14px;
+}
+.bg{
+    background-color: rgb(204, 204, 255);
+}
+.color{
+    color: rgb(204, 204, 255);;
+}
+.img-setting{
+    border-radius: 50%;
+    width: 50px;
+}
+.list-dec{
+    list-style: none;
+}
+.ps{
+    padding-left: 12px;
 }
