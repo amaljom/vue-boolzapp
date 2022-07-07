@@ -59,6 +59,7 @@ body{
 }
 .scroll{
     overflow-y: scroll;
+    height: calc( 100% - 183px);
 }
 .background-message{
     background-image: url(../img/mine.jpg);
