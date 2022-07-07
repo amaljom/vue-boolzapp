@@ -14,8 +14,8 @@
     height: 820px;
 }
 .nav{
-    height: 65px;
-    background-color: rgb(219, 219, 219);
+    height: 70px;
+    background-color: rgb(234, 234, 234);
 }
 .round{
     height: 47px;
@@ -25,7 +25,7 @@
 }
 .father-container{
     height: 50px;
-    background-color:rgb(219, 219, 219);
+    background-color:rgb(234, 234, 234);
     padding: 5px;
 }
 
@@ -57,4 +57,15 @@
 .background-message{
     background-image: url(../img/mine.jpg);
     height: calc( 100% - 140px);
+}
+.bar{
+    width: 65%;
+    height: 40px;
+    background-color: white;
+}
+.bg-icon{
+    color: rgb(148, 148, 148);
+}
+.bar-in{
+    width: 100%;
 }

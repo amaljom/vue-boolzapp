@@ -17,10 +17,10 @@
     <!-- ? QUA DENTRO OPERIAMO E SCRIVIAMO TUTTO L' HTML DI CUI AVREMO BISOGNO -->
         <div class="container  col-10 d-flex">
             <div class="col-4 bg-light alt">
-                <div class="nav border-end"></div>
+                <div class="nav border-end "></div>
                 <!-- ! notifiche -->
                 <div class="bg d-flex ps">
-                    <div class="p-2">
+                    <div class="py-2 pe-2">
                         <i class="fa-solid fa-bell-slash fs-3 p-2 round color"></i>
                     </div>
                     <div class="text-start align-self-center">
@@ -49,7 +49,7 @@
                                 <img class="img-setting" :src="'./img/avatar'+contacts[index].avatar+'.jpg'" alt="Non trovato">
                             </div>
                             <div class="ps-2">
-                                <h2 class="fs-5 my-0">{{ contacts[index].name }}</h2>
+                                <h2 class="fs-5 my-0">{{ contact.name }}</h2>
                                 <p class="font">ultimo messaggio inviato</p>
                             </div>
                             <div class="padd">
@@ -63,12 +63,21 @@
                 <div class="nav">
                 </div>
                 <!-- * INSERIAMO IN QUESTO DIV IL BACKGROUND E LE IMMAGINI -->
-                <div class="background-message">
+                <div class="background-message scroll">
 
                 </div>
                 <!-- ! ULTIMO DIV PER I MESSAGGI DA INVIARE -->
-                <div>
-
+                <div class="nav d-flex justify-content-around align-items-center">
+                    <div>
+                        <i class=" bg-icon fa-solid fa-face-smile fs-2"></i>
+                    </div>
+                    <div class="bar rounded-3">
+                        <!-- text area -->
+                        <input type="text" class="w-100 h-100 rounded-3">
+                    </div>
+                    <div>
+                        <i class="bg-icon fa-solid fa-microphone fs-2"></i>
+                    </div>
                 </div>
             </div>
         </div>
