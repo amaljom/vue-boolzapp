@@ -5,6 +5,7 @@ const app= new Vue(
     el:'#root',
 
     data:{
+        message: '  scrivi un messaggio',
         indexActive: 0,
         contacts: [
             {

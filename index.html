@@ -17,7 +17,16 @@
     <!-- ? QUA DENTRO OPERIAMO E SCRIVIAMO TUTTO L' HTML DI CUI AVREMO BISOGNO -->
         <div class="container  col-10 d-flex">
             <div class="col-4 bg-light alt">
-                <div class="nav border-end "></div>
+                <div class="nav border-end d-flex justify-content-between align-items-center">
+                    <div>
+                        <img class="img-setting m-2" src="./img/avatar_io.jpg" alt="">
+                    </div>
+                    <div>
+                        <i class="bg-icon fa-regular fa-circle fs-4 pe-2"></i>
+                        <i class="bg-icon fa-regular fa-message fs-4 pe-2"></i>
+                        <i class="bg-icon fa-solid fa-ellipsis-vertical fs-4 pe-2"></i>
+                    </div>
+                </div>
                 <!-- ! notifiche -->
                 <div class="bg d-flex ps">
                     <div class="py-2 pe-2">
@@ -60,7 +69,18 @@
                 </div>
             </div>
             <div class="col-8">
-                <div class="nav">
+                <div class="nav d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <img class="img-setting m-2" :src="'./img/avatar'+contacts[indexActive].avatar+'.jpg'" alt="Immagine non trovata">
+                        <div>
+                            <p>{{contacts[indexActive].name}}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass bg-icon fs-4 pe-2"></i>
+                        <i class="fa-solid fa-paperclip bg-icon fs-4 pe-2"></i>
+                        <i class="bg-icon fa-solid fa-ellipsis-vertical fs-4 pe-2"></i>
+                    </div>
                 </div>
                 <!-- * INSERIAMO IN QUESTO DIV IL BACKGROUND E LE IMMAGINI -->
                 <div class="background-message scroll">
@@ -86,7 +106,7 @@
                     </div>
                     <div class="bar rounded-3">
                         <!-- text area -->
-                        <input type="text" class="w-100 h-100 rounded-3">
+                        <input type="text" class="w-100 h-100 rounded-3" v-model="message">
                     </div>
                     <div>
                         <i class="bg-icon fa-solid fa-microphone fs-2"></i>
