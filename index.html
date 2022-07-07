@@ -64,10 +64,13 @@
                 </div>
                 <!-- * INSERIAMO IN QUESTO DIV IL BACKGROUND E LE IMMAGINI -->
                 <div class="background-message scroll">
-                    <div class="w-75 h-100 mx-auto bg-danger mt-4 ">
-                        <div v-for="(contact, ind) in contacts" class="d-flex messagio justify-content-between sent">
+                    <div class="w-75 h-100 mx-auto mt-4 ">
+                        <div 
+                         v-for="(mes,ind) in contacts[indexActive].messages"
+                         class="mb-2 d-flex messagio justify-content-between"
+                         :class="(mes.status===sent)? 'sent': ''">
                             <div> 
-                                <p class="fs-5">contacts[ind].messages.message</p>
+                                <p class="fs-5">{{mes.message}}</p>
                             </div>
                             <div>
                                 <span class="font2">12:00</span>
