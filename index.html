@@ -64,7 +64,17 @@
                 </div>
                 <!-- * INSERIAMO IN QUESTO DIV IL BACKGROUND E LE IMMAGINI -->
                 <div class="background-message scroll">
+                    <div class="w-75 h-100 mx-auto bg-danger mt-4 ">
+                        <div v-for="(contact, ind) in contacts" class="d-flex messagio justify-content-between sent">
+                            <div> 
+                                <p class="fs-5">contacts[ind].messages.message</p>
+                            </div>
+                            <div>
+                                <span class="font2">12:00</span>
+                            </div>
+                        </div>
 
+                    </div>
                 </div>
                 <!-- ! ULTIMO DIV PER I MESSAGGI DA INVIARE -->
                 <div class="nav d-flex justify-content-around align-items-center">

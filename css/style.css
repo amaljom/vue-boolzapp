@@ -69,3 +69,17 @@
 .bar-in{
     width: 100%;
 }
+.messagio{
+    width: 300px;
+    background-color: white;
+    border-radius: 6px;
+    margin-top: -1px;
+    padding: 0 5px;
+}
+.sent{
+    position: relative;
+    left: 294px;
+}
+.font2{
+    font-size: 10px;
+}
