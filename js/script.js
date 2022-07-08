@@ -5,7 +5,7 @@ const app= new Vue(
     el:'#root',
 
     data:{
-        message: ' scrivi un messaggio',
+        messaggio: ' scrivi un messaggio',
         indexActive: 0,
         contacts: [
             {
@@ -177,15 +177,15 @@ const app= new Vue(
             this.indexActive=i;
         },
 
-        transform: function(m){
-            this.message='';
+        transform: function(){
+            this.messaggio='';
         },
         
-        add: function(m){
-            if (m!=''){
-                this.contacts[indexActive].messages.push({
+        add: function(mes){
+            if (mes!=''){
+                this.contacts[this.indexActive].messages.push({
                     date: '12:30',
-                    message: 'm',
+                    message: mes,
                     status: 'sent'
                 });
             }
