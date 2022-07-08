@@ -5,7 +5,6 @@ const app= new Vue(
     el:'#root',
 
     data:{
-        recieved:false,
         messaggio: ' scrivi un messaggio',
         indexActive: 0,
         contacts: [
@@ -190,20 +189,18 @@ const app= new Vue(
                     status: 'sent',
                 });
                 this.messaggio='';
-                setTimeout(function(){
+                this.rec=true;
+                setTimeout(()=>{
                     this.contacts[this.indexActive].messages.push({
                         date: '12:30',
                         message: 'ok',
-                        status: 'received',
+                        status: 'received'
                     });
                 }, 1000);
             }
         },
+
+        
     },
-
-    created(){
-    }
-
-
 
 });
