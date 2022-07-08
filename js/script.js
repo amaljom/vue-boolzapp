@@ -183,9 +183,9 @@ const app= new Vue(
         
         add: function(m){
             if (m!=''){
-                this.contacts.messages.push({
+                this.contacts[indexActive].messages.push({
                     date: '12:30',
-                    message: m,
+                    message: 'm',
                     status: 'sent'
                 });
             }
