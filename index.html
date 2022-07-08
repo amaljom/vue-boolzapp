@@ -66,7 +66,7 @@
                                     <p class="font">ultimo messaggio inviato</p>
                                 </div>
                                 <div class="padd">
-                                    <p >12:30</p>
+                                    <p> {{ newDate2(contact.messages[length(index)].date) }} </p>
                                 </div>
                         </li>
                     </ul>
@@ -97,8 +97,11 @@
                                 <p class="fs-5 m-2">{{mes.message}}</p>
                             </div>
                             <div class="align-self-end">
-                                <i @click="mes.messages.splice(ind, 1)" class="fa-solid fa-angle-down"></i>
-                                <span class="font2">12:00</span>
+                                <i @click="contacts[indexActive].messages.splice(ind, 1)" class="fa-solid fa-angle-down"></i>
+                                <div>
+                                    <span class="font2">{{ newDate(ind) }}</span>
+                                </div>
+                                
                             </div>
                         </div>
 

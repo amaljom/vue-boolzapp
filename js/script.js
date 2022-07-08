@@ -5,6 +5,7 @@ const app= new Vue(
     el:'#root',
 
     data:{
+        date:'',
         search:'',
         messaggio: ' scrivi un messaggio',
         indexActive: 0,
@@ -185,7 +186,7 @@ const app= new Vue(
         addMessage: function(userMessage){
             if (userMessage!=''){
                 this.contacts[this.indexActive].messages.push({
-                    date: '12:30',
+                    date: '10/01/2020 15:51:00',
                     message: userMessage,
                     status: 'sent',
                 });
@@ -193,7 +194,7 @@ const app= new Vue(
                 this.rec=true;
                 setTimeout(()=>{
                     this.contacts[this.indexActive].messages.push({
-                        date: '12:30',
+                        date: '10/01/2020 15:52:00',
                         message: 'ok',
                         status: 'received'
                     });
@@ -201,8 +202,18 @@ const app= new Vue(
             }
         },
 
-        
-        
+        newDate: function(ind){
+            let date = this.contacts[this.indexActive].messages[ind].date.split(' ')[1];
+            return date;
+        },
+
+        newDate2: function(date){
+            return date.split(' ')[1];
+        },
+
+        length: function(indexOfElement){
+             return this.contacts[indexOfElement].messages.length -1;
+        } 
     },
 
     computed:{
