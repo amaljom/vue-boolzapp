@@ -188,7 +188,7 @@ const app= new Vue(
                     message: userMessage,
                     status: 'sent',
                 });
-                this.messaggio=''
+                this.messaggio='';
             }
         },
     }
