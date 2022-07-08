@@ -43,10 +43,10 @@
                 <div class="father-container">
                     <div class="d-flex bg-white">
                         <div class="pe-4 ps-4">
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
                         </div>
                         <div>
-                            <p class="font">Verifica o inizia una nuova chat</p>
+                            <input class="w-100" type="text" placeholder="Cerca una chat" v-model="search">
                         </div>
                     </div>
                     
@@ -54,17 +54,20 @@
                <!-- ! inserisco dinamicamente le chat -->
                 <div class="scroll">
                     <ul class="ps pt-2">
-                        <li @click="indexChange(index)" v-for="(contact, index) in contacts" class="pt-1 list-dec d-flex border-bottom" :class="(index===indexActive)? 'bgActive': ''">
-                            <div>
-                                <img class="img-setting" if :src="'./img/avatar'+contacts[index].avatar+'.jpg'" alt="Non trovato">
-                            </div>
-                            <div class="ps-2">
-                                <h2 class="fs-5 my-0">{{ contact.name }}</h2>
-                                <p class="font">ultimo messaggio inviato</p>
-                            </div>
-                            <div class="padd">
-                                <p >12:30</p>
-                            </div>
+                        <li @click="indexChange(index)" 
+                            v-for="(contact, index) in filterFunction"
+                            class="pt-1 list-dec d-flex border-bottom" 
+                            :class="(index===indexActive)? 'bgActive': ''">
+                                <div>
+                                    <img class="img-setting" if :src="'./img/avatar'+contacts[index].avatar+'.jpg'" alt="Non trovato">
+                                </div>
+                                <div class="ps-2">
+                                    <h2 class="fs-5 my-0">{{ contact.name }}</h2>
+                                    <p class="font">ultimo messaggio inviato</p>
+                                </div>
+                                <div class="padd">
+                                    <p >12:30</p>
+                                </div>
                         </li>
                     </ul>
                 </div>

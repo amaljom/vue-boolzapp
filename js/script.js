@@ -5,6 +5,7 @@ const app= new Vue(
     el:'#root',
 
     data:{
+        search:'',
         messaggio: ' scrivi un messaggio',
         indexActive: 0,
         contacts: [
@@ -201,6 +202,15 @@ const app= new Vue(
         },
 
         
+        
     },
+
+    computed:{
+        filterFunction: function(){
+            return this.contacts.filter((contact) =>{
+                return contact.name.toLowerCase().match(this.search)
+            });
+        }
+    }
 
 });
