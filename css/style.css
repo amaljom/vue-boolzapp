@@ -41,8 +41,10 @@ body{
     color: rgb(204, 204, 255);;
 }
 .img-setting{
-    border-radius: 50%;
-    width: 50px;
+    border-radius: 76%;
+    width: 65px;
+    height: 65px;
+    padding: 6px;
 }
 .list-dec{
     list-style: none;

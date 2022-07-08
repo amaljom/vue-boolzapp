@@ -56,15 +56,16 @@
                     <ul class="ps pt-2">
                         <li @click="indexChange(index)" 
                             v-for="(contact, index) in filterFunction"
-                            class="pt-1 list-dec d-flex border-bottom" 
+                            class=" list-dec d-flex border-bottom justify-content-between" 
                             :class="(index===indexActive)? 'bgActive': ''">
-                                <div>
+                                <div class="d-flex">
                                     <img class="img-setting" if :src="'./img/avatar'+contacts[index].avatar+'.jpg'" alt="Non trovato">
+                                    <div class="ps-2">
+                                        <h2 class="fs-5 my-0">{{ contact.name }}</h2>
+                                        <p class="font">{{ contact.messages[length(index)].message }}</p>
+                                    </div>
                                 </div>
-                                <div class="ps-2">
-                                    <h2 class="fs-5 my-0">{{ contact.name }}</h2>
-                                    <p class="font">ultimo messaggio inviato</p>
-                                </div>
+                                
                                 <div class="padd">
                                     <p> {{ newDate2(contact.messages[length(index)].date) }} </p>
                                 </div>
@@ -88,7 +89,7 @@
                 </div>
                 <!-- * INSERIAMO IN QUESTO DIV IL BACKGROUND E I MESSAGGI -->
                 <div class="background-message scroll">
-                    <div class="w-75 h-100 mx-auto mt-4 ">
+                    <div class="w-75 h-antiscroll mx-auto mt-4 ">
                         <div 
                          v-for="(mes,ind) in contacts[indexActive].messages"
                          class="mb-2 d-flex messagio justify-content-between"
