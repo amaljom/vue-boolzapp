@@ -173,21 +173,22 @@ const app= new Vue(
     },
 
     methods:{
-        indexChange:function(i){
-            this.indexActive=i;
+        indexChange:function(indexNow){
+            this.indexActive=indexNow;
         },
 
         transform: function(){
             this.messaggio='';
         },
         
-        add: function(mes){
-            if (mes!=''){
+        addMessage: function(userMessage){
+            if (userMessage!=''){
                 this.contacts[this.indexActive].messages.push({
                     date: '12:30',
-                    message: mes,
-                    status: 'sent'
+                    message: userMessage,
+                    status: 'sent',
                 });
+                this.messaggio=''
             }
         },
     }
