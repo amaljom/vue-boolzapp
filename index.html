@@ -83,7 +83,7 @@
                         <i class="bg-icon fa-solid fa-ellipsis-vertical fs-4 pe-2"></i>
                     </div>
                 </div>
-                <!-- * INSERIAMO IN QUESTO DIV IL BACKGROUND E LE IMMAGINI -->
+                <!-- * INSERIAMO IN QUESTO DIV IL BACKGROUND E I MESSAGGI -->
                 <div class="background-message scroll">
                     <div class="w-75 h-100 mx-auto mt-4 ">
                         <div 
@@ -91,9 +91,9 @@
                          class="mb-2 d-flex messagio justify-content-between"
                          :class="(mes.status==='sent')? 'sent': ''">
                             <div> 
-                                <p class="fs-5">{{mes.message}}</p>
+                                <p class="fs-5 m-2">{{mes.message}}</p>
                             </div>
-                            <div>
+                            <div class="align-self-end">
                                 <span class="font2">12:00</span>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                     </div>
                     <div class="bar rounded-3">
                         <!-- text area -->
-                        <input type="text" class="w-100 h-100 rounded-3" v-model="message">
+                        <input type="text" @click="transform()" class="w-100 h-100 rounded-3" v-model="message" @keyup:enter="add(message)">
                     </div>
                     <div>
                         <i class="bg-icon fa-solid fa-microphone fs-2"></i>
