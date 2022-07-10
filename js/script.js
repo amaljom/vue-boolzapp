@@ -7,6 +7,8 @@ const app= new Vue(
     data:{
         date:'',
         search:'',
+        visible: false,
+        dropVisible:false,
         messaggio: ' scrivi un messaggio',
         indexActive: 0,
         contacts: [
@@ -191,7 +193,6 @@ const app= new Vue(
                     status: 'sent',
                 });
                 this.messaggio='';
-                this.rec=true;
                 setTimeout(()=>{
                     this.contacts[this.indexActive].messages.push({
                         date: '10/01/2020 15:52:00',
@@ -213,6 +214,9 @@ const app= new Vue(
 
         length: function(indexOfElement){
              return this.contacts[indexOfElement].messages.length -1;
+        },
+        dropVisibilator: function(){
+            this.dropVisible=true;
         } 
     },
 
@@ -225,3 +229,6 @@ const app= new Vue(
     }
 
 });
+
+
+// @click="contacts[indexActive].messages.splice(ind, 1)"

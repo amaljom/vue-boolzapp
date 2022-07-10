@@ -57,7 +57,8 @@ body{
     padding-left: 12px;
 }
 .padd{
-    padding-left: 119px;
+    padding-right: 5px;
+    padding-left: 40px;
 }
 .scroll{
     overflow-y: scroll;
@@ -99,4 +100,32 @@ body{
 .quello-dietro{
     height: 250px;
     background-color: rgb(0, 150, 136);
+}
+.align{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.drop{
+    align-self: flex-end;
+    padding: 9px;
+    cursor: pointer;
+}
+
+.drop3{
+    position: absolute;
+    right: 10px;
+    top: 26px;
+    display: none;
+}
+
+.paddingM{
+    width: 249px;
+    padding-right: 70px;
+}
+.rel{
+    position:relative;
+}
+.display{
+    display:block;
 }

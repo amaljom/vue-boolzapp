@@ -19,8 +19,9 @@
         <div class="container  col-10 d-flex">
             <div class="col-4 bg-light alt">
                 <div class="nav border-end d-flex justify-content-between align-items-center">
-                    <div>
-                        <img class="img-setting m-2" src="./img/avatar_io.jpg" alt="">
+                    <div class="d-flex">
+                        <img class="img-setting m-1" src="./img/avatar_io.jpg" alt="">
+                        <h4>Sofia</h4>
                     </div>
                     <div>
                         <i class="bg-icon fa-regular fa-circle fs-4 pe-2"></i>
@@ -53,13 +54,13 @@
                 </div>
                <!-- ! inserisco dinamicamente le chat -->
                 <div class="scroll">
-                    <ul class="ps pt-2">
+                    <ul class="ps">
                         <li @click="indexChange(index)" 
                             v-for="(contact, index) in filterFunction"
                             class=" list-dec d-flex border-bottom justify-content-between" 
                             :class="(index===indexActive)? 'bgActive': ''">
                                 <div class="d-flex">
-                                    <img class="img-setting" if :src="'./img/avatar'+contacts[index].avatar+'.jpg'" alt="Non trovato">
+                                    <img class="img-setting" if :src="'./img/avatar'+contact.avatar+'.jpg'" alt="Non trovato">
                                     <div class="ps-2">
                                         <h2 class="fs-5 my-0">{{ contact.name }}</h2>
                                         <p class="font">{{ contact.messages[length(index)].message }}</p>
@@ -76,9 +77,10 @@
             <div class="col-8">
                 <div class="nav d-flex justify-content-between align-items-center">
                     <div class="d-flex align-items-center">
-                        <img class="img-setting m-2" :src="'./img/avatar'+contacts[indexActive].avatar+'.jpg'" alt="Immagine non trovata">
+                        <img class="img-setting m-1" :src="'./img/avatar'+contacts[indexActive].avatar+'.jpg'" alt="Immagine non trovata">
                         <div>
-                            <p>{{contacts[indexActive].name}}</p>
+                            <span>{{contacts[indexActive].name}}</span>
+                            <p>Ultimo accesso alle {{ newDate2(contacts[indexActive].messages[length(indexActive)].date) }} </p>
                         </div>
                     </div>
                     <div>
@@ -89,22 +91,39 @@
                 </div>
                 <!-- * INSERIAMO IN QUESTO DIV IL BACKGROUND E I MESSAGGI -->
                 <div class="background-message scroll">
-                    <div class="w-75 h-antiscroll mx-auto mt-4 ">
+                    <div class="w-75 mx-auto mt-4 ">
                         <div 
                          v-for="(mes,ind) in contacts[indexActive].messages"
                          class="mb-2 d-flex messagio justify-content-between"
                          :class="(mes.status==='sent')? 'sent': ''">
-                            <div> 
-                                <p class="fs-5 m-2">{{mes.message}}</p>
-                            </div>
-                            <div class="align-self-end">
-                                <i @click="contacts[indexActive].messages.splice(ind, 1)" class="fa-solid fa-angle-down"></i>
-                                <div>
-                                    <span class="font2">{{ newDate(ind) }}</span>
+                            <div class="d-flex">
+                                <div class="paddingM"> 
+                                    <p class="fs-5 m-2">{{mes.message}}</p>
                                 </div>
-                                
+                                <div  @mouseover="visible = true" @mouseleave="visible = false" class="align">
+                                    <i v-show="visible"
+                                    @click="dropVisibilator"
+                                    class="fa-solid fa-angle-down drop rel">
+                                    <div @mouseleave="dropVisible=flase" class="drop3" :class="(dropVisible===true)? 'display': ''" >
+                                        <ul class="list-group">
+                                            <li class="list-group-item p-0 pt-1 text-center">
+                                                <p class="font">Info message</p>
+                                            </li>
+                                            <li class="list-group-item p-0 pt-1 text-center">
+                                                <p @click="contacts[indexActive].messages.splice(ind, 1)" 
+                                                class="font">Delete messege</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    </i>
+                                    <div>
+                                        <span class="font2">{{ newDate(ind) }}</span>
+                                    </div>
+                                </div>
                             </div>
+                            
                         </div>
+                        
 
                     </div>
                 </div>
