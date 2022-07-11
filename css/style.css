@@ -85,6 +85,7 @@ body{
     border-radius: 6px;
     margin-top: -1px;
     padding: 0 5px;
+    min-height: 59px;
 }
 .sent{
     position: relative;
@@ -105,11 +106,13 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-self: end;
 }
 .drop{
     align-self: flex-end;
     padding: 9px;
     cursor: pointer;
+    
 }
 
 .drop3{
@@ -117,7 +120,10 @@ body{
     right: 10px;
     top: 26px;
     display: none;
+    width: 150px;
+    z-index: 2;
 }
+
 
 .paddingM{
     width: 249px;

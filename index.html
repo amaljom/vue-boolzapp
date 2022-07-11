@@ -104,9 +104,9 @@
                                 </div>
                                 <div class="align">
                                     <i 
-                                    @click="dropVisibilator"
+                                    @click="dropVisibilator(ind)"
                                     class="fa-solid fa-angle-down drop rel">
-                                    <div @mouseleave="dropVisible=false" class="drop3" :class="(dropVisible===true)? 'display': ''" >
+                                    <div @mouseleave="indexActiveBox= '' " class="drop3" :class="(indexActiveBox===ind)? 'display': ''" >
                                         <ul class="list-group">
                                             <li class="list-group-item p-0 pt-1 text-center">
                                                 <p class="font">Info message</p>
@@ -118,9 +118,9 @@
                                         </ul>
                                     </div>
                                     </i>
-                                    <!-- <div>
+                                    <div>
                                         <span class="font2">{{ newDate(ind) }}</span>
-                                    </div> -->
+                                    </div>
                                 </div>
                             </div>
                             

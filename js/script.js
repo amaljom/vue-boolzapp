@@ -9,6 +9,7 @@ const app= new Vue(
         dropVisible:false,
         messaggio: ' scrivi un messaggio',
         indexActive: 0,
+        indexActiveBox: '',
         contacts: [
             {
                 name: 'Michele',
@@ -228,8 +229,8 @@ const app= new Vue(
             const lenght=this.contacts[indexOfElement].messages.length;
              return lenght;
         },
-        dropVisibilator: function(){
-            this.dropVisible=true;
+        dropVisibilator: function(index){
+            this.indexActiveBox= index;
         },
         searchingFunction: function(){
             for (let i = 0; i < this.contacts.length; i++) {
