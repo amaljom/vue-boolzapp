@@ -81,7 +81,7 @@
                         <img class="img-setting m-1" :src="'./img/avatar'+contacts[indexActive].avatar+'.jpg'" alt="Immagine non trovata">
                         <div>
                             <span>{{contacts[indexActive].name}}</span>
-                            <p>Ultimo accesso alle  </p>
+                            <p v-if="newDate3()!='' ">Ultimo accesso alle {{ newDate3() }} </p>
                         </div>
                     </div>
                     <div>

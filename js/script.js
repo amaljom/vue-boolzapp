@@ -214,6 +214,17 @@ const app= new Vue(
             }
         },
 
+        newDate3: function(index){
+            if(this.length(this.indexActive)!=0){
+                let long= this.length(this.indexActive)-1;
+                return this.contacts[this.indexActive].messages[long].date.split(' ')[1]; 
+            }
+            else{
+                return "";
+            }
+        },
+
+
         length: function(indexOfElement){
             const lenght=this.contacts[indexOfElement].messages.length;
              return lenght;
