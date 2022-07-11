@@ -7,8 +7,8 @@ const app= new Vue(
     data:{
         date:'',
         search:'',
-        visible: false,
-        dropVisible:false,
+        visible: true,
+        dropVisible:true,
         messaggio: ' scrivi un messaggio',
         indexActive: 0,
         contacts: [
@@ -176,6 +176,14 @@ const app= new Vue(
         ]
     },
 
+    computed:{
+        filterFunction: function(){
+            return this.contacts.filter((contact) =>{
+                return contact.name.toLowerCase().includes(this.search)
+            });
+        }
+    },
+
     methods:{
         indexChange:function(indexNow){
             this.indexActive=indexNow;
@@ -218,15 +226,9 @@ const app= new Vue(
         dropVisibilator: function(){
             this.dropVisible=true;
         } 
-    },
-
-    computed:{
-        filterFunction: function(){
-            return this.contacts.filter((contact) =>{
-                return contact.name.toLowerCase().match(this.search)
-            });
-        }
     }
+
+    
 
 });
 
