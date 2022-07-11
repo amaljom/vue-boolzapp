@@ -44,10 +44,10 @@
                 <div class="father-container">
                     <div class="d-flex bg-white">
                         <div class="pe-4 ps-4">
-                            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                            <a @click.prevent="searchingFunction()" href=""><i class="fa-solid fa-magnifying-glass"></i></a>
                         </div>
                         <div>
-                            <input @keyup.enter="searchingFunction()" class="w-100" type="text" placeholder="Cerca una chat" v-model="search">
+                            <input @keyUp.enter="searchingFunction()" class="w-100" type="text" placeholder="Cerca una chat" v-model="search">
                         </div>
                     </div>
                     
@@ -55,7 +55,8 @@
                <!-- ! inserisco dinamicamente le chat -->
                 <div class="scroll">
                     <ul class="ps">
-                        <li @click="indexChange(index)" 
+                        <li v-if="contact.visible"
+                            @click="indexChange(index)" 
                             v-for="(contact, index) in contacts"
                             class=" list-dec d-flex border-bottom justify-content-between" 
                             :class="(index===indexActive)? 'bgActive': ''">
@@ -100,8 +101,8 @@
                                 <div class="paddingM"> 
                                     <p class="fs-5 m-2">{{mes.message}}</p>
                                 </div>
-                                <div  @mouseover="visible = true" @mouseleave="visible = false" class="align">
-                                    <i v-show="visible"
+                                <div  @mouseover="visible1 = true" @mouseleave="visible1 = false" class="align">
+                                    <i v-show="visible1"
                                     @click="dropVisibilator"
                                     class="fa-solid fa-angle-down drop rel">
                                     <div @mouseleave="dropVisible=flase" class="drop3" :class="(dropVisible===true)? 'display': ''" >

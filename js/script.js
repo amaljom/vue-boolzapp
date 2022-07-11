@@ -6,7 +6,7 @@ const app= new Vue(
 
     data:{
         search:'',
-        visible: false,
+        visible1: false,
         dropVisible:false,
         messaggio: ' scrivi un messaggio',
         indexActive: 0,
@@ -175,14 +175,6 @@ const app= new Vue(
         ]
     },
 
-    // computed:{
-    //     filterFunction: function(){
-    //         return this.contacts.filter((contact) =>{
-    //             return contact.name.toLowerCase().includes(this.search)
-    //         });
-    //     }
-    // },
-
     methods:{
         indexChange:function(indexNow){
             this.indexActive=indexNow;
@@ -231,6 +223,7 @@ const app= new Vue(
                     this.contacts[i].visible=true;
                 }
                 else{
+                    
                     if (this.contacts[i].name.toLowerCase().includes(this.search.toLowerCase())) {
                         this.contacts[i].visible=true;
                     }
@@ -239,7 +232,8 @@ const app= new Vue(
                     }
                 }
             }
-        } 
+        },
+        
     }
 
     
