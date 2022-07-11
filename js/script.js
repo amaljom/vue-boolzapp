@@ -5,10 +5,9 @@ const app= new Vue(
     el:'#root',
 
     data:{
-        date:'',
         search:'',
-        visible: true,
-        dropVisible:true,
+        visible: false,
+        dropVisible:false,
         messaggio: ' scrivi un messaggio',
         indexActive: 0,
         contacts: [
@@ -176,13 +175,13 @@ const app= new Vue(
         ]
     },
 
-    computed:{
-        filterFunction: function(){
-            return this.contacts.filter((contact) =>{
-                return contact.name.toLowerCase().includes(this.search)
-            });
-        }
-    },
+    // computed:{
+    //     filterFunction: function(){
+    //         return this.contacts.filter((contact) =>{
+    //             return contact.name.toLowerCase().includes(this.search)
+    //         });
+    //     }
+    // },
 
     methods:{
         indexChange:function(indexNow){
@@ -225,6 +224,21 @@ const app= new Vue(
         },
         dropVisibilator: function(){
             this.dropVisible=true;
+        },
+        searchingFunction: function(){
+            for (let i = 0; i < this.contacts.length; i++) {
+                if(this.search===""){
+                    this.contacts[i].visible=true;
+                }
+                else{
+                    if (this.contacts[i].name.toLowerCase().includes(this.search.toLowerCase())) {
+                        this.contacts[i].visible=true;
+                    }
+                    else{
+                        this.contacts[i].visible=false;
+                    }
+                }
+            }
         } 
     }
 
