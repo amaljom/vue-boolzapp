@@ -64,12 +64,12 @@
                                     <img class="img-setting" if :src="'./img/avatar'+contact.avatar+'.jpg'" alt="Non trovato">
                                     <div class="ps-2">
                                         <h2 class="fs-5 my-0">{{ contact.name }}</h2>
-                                        <p class="font">{{ contact.messages[length(index)].message }}</p>
+                                        <p class="font"> {{ lastMessage(contact,index) }}</p>
                                     </div>
                                 </div>
                                 
                                 <div class="padd">
-                                    <p> {{ newDate2(contact.messages[length(index)].date) }} </p>
+                                    <p> {{ newDate2(contact,index) }} </p>
                                 </div>
                         </li>
                     </ul>
@@ -81,7 +81,7 @@
                         <img class="img-setting m-1" :src="'./img/avatar'+contacts[indexActive].avatar+'.jpg'" alt="Immagine non trovata">
                         <div>
                             <span>{{contacts[indexActive].name}}</span>
-                            <p>Ultimo accesso alle {{ newDate2(contacts[indexActive].messages[length(indexActive)].date) }} </p>
+                            <p>Ultimo accesso alle  </p>
                         </div>
                     </div>
                     <div>
@@ -93,7 +93,8 @@
                 <!-- * INSERIAMO IN QUESTO DIV IL BACKGROUND E I MESSAGGI -->
                 <div class="background-message scroll">
                     <div class="w-75 mx-auto mt-4 ">
-                        <div 
+                        <div
+                        v-if="contacts[indexActive].messages.length" 
                          v-for="(mes,ind) in contacts[indexActive].messages"
                          class="mb-2 d-flex messagio justify-content-between"
                          :class="(mes.status==='sent')? 'sent': ''">
@@ -105,13 +106,13 @@
                                     <i v-show="visible1"
                                     @click="dropVisibilator"
                                     class="fa-solid fa-angle-down drop rel">
-                                    <div @mouseleave="dropVisible=flase" class="drop3" :class="(dropVisible===true)? 'display': ''" >
+                                    <div @mouseleave="dropVisible=false" class="drop3" :class="(dropVisible===true)? 'display': ''" >
                                         <ul class="list-group">
                                             <li class="list-group-item p-0 pt-1 text-center">
                                                 <p class="font">Info message</p>
                                             </li>
                                             <li class="list-group-item p-0 pt-1 text-center">
-                                                <p @click="contacts[indexActive].messages.splice(ind, 1)" 
+                                                <p @click="delMes(ind)" 
                                                 class="font">Delete messege</p>
                                             </li>
                                         </ul>

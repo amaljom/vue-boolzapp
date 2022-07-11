@@ -179,10 +179,6 @@ const app= new Vue(
         indexChange:function(indexNow){
             this.indexActive=indexNow;
         },
-
-        transform: function(){
-            this.messaggio='';
-        },
         
         addMessage: function(userMessage){
             if (userMessage!=''){
@@ -207,12 +203,20 @@ const app= new Vue(
             return date;
         },
 
-        newDate2: function(date){
-            return date.split(' ')[1];
+        newDate2: function(contact, index){
+            if(this.length(index)!=0){
+                let long= this.length(index)-1;
+                return contact.messages[long].date.split(' ')[1];
+                
+            }
+            else{
+                return "";
+            }
         },
 
         length: function(indexOfElement){
-             return this.contacts[indexOfElement].messages.length -1;
+            const lenght=this.contacts[indexOfElement].messages.length;
+             return lenght;
         },
         dropVisibilator: function(){
             this.dropVisible=true;
@@ -233,11 +237,21 @@ const app= new Vue(
                 }
             }
         },
-        
+        delMes: function(ind){
+            this.contacts[this.indexActive].messages.splice(ind, 1);
+        },
+
+        lastMessage: function(contact, index){
+            if(this.length(index)===0){
+                
+                return "Nessun messaggio nella chat";
+            }
+            else{
+                let long= this.length(index)-1;
+                return contact.messages[long].message;
+            }
+        }
     }
-
-    
-
 });
 
 
