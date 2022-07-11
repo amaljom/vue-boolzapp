@@ -98,12 +98,12 @@
                          v-for="(mes,ind) in contacts[indexActive].messages"
                          class="mb-2 d-flex messagio justify-content-between"
                          :class="(mes.status==='sent')? 'sent': ''">
-                            <div class="d-flex">
+                            <div class="d-flex hover">
                                 <div class="paddingM"> 
                                     <p class="fs-5 m-2">{{mes.message}}</p>
                                 </div>
-                                <div  @mouseover="visible1 = true" @mouseleave="visible1 = false" class="align">
-                                    <i v-show="visible1"
+                                <div class="align">
+                                    <i 
                                     @click="dropVisibilator"
                                     class="fa-solid fa-angle-down drop rel">
                                     <div @mouseleave="dropVisible=false" class="drop3" :class="(dropVisible===true)? 'display': ''" >
@@ -118,9 +118,9 @@
                                         </ul>
                                     </div>
                                     </i>
-                                    <div>
+                                    <!-- <div>
                                         <span class="font2">{{ newDate(ind) }}</span>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             

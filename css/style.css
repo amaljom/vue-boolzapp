@@ -125,18 +125,13 @@ body{
 }
 .rel{
     position:relative;
+    display: none
+}
+.hover:hover  .rel{
+    display: block;
 }
 .display{
     display:block;
 }
 
 
-/* newDate2: function(contact, indexItem){
-    if(this.length(indexItem)!=0){
-        let lastDate=contact.messages[this.length(indexItem)].date;
-        return lastDate.split(' ')[1];
-    }
-    else{
-        return "";
-    } */
-},

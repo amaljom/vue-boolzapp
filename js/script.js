@@ -6,7 +6,6 @@ const app= new Vue(
 
     data:{
         search:'',
-        visible1: false,
         dropVisible:false,
         messaggio: ' scrivi un messaggio',
         indexActive: 0,
