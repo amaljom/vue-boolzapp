@@ -55,7 +55,7 @@
                <!-- ! inserisco dinamicamente le chat -->
                 <div class="scroll">
                     <ul class="ps">
-                        <li v-if="searchingFunction()" @click="indexChange(index)" 
+                        <li @click="indexChange(index)" 
                             v-for="(contact, index) in contacts"
                             class=" list-dec d-flex border-bottom justify-content-between" 
                             :class="(index===indexActive)? 'bgActive': ''">
