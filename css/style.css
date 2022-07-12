@@ -48,6 +48,8 @@ body{
 }
 .list-dec{
     list-style: none;
+    height: 77px;
+
 }
 .list-dec:hover{
     background-color: lightgray;

@@ -21,7 +21,7 @@
                 <div class="nav border-end d-flex justify-content-between align-items-center">
                     <div class="d-flex">
                         <img class="img-setting m-1" src="./img/avatar_io.jpg" alt="">
-                        <h4>Sofia</h4>
+                        <h4 class="m-3">Sofia</h4>
                     </div>
                     <div>
                         <i class="bg-icon fa-regular fa-circle fs-4 pe-2"></i>
@@ -46,15 +46,15 @@
                         <div class="pe-4 ps-4">
                             <a @click.prevent="searchingFunction()" href=""><i class="fa-solid fa-magnifying-glass"></i></a>
                         </div>
-                        <div>
-                            <input @keyUp.enter="searchingFunction()" class="w-100" type="text" placeholder="Cerca una chat" v-model="search">
+                        <div class="w-100 ">
+                            <input @keyUp.enter="searchingFunction()" class="w-100 border-0" type="text" placeholder="Cerca una chat" v-model="search">
                         </div>
                     </div>
                     
                 </div>
                <!-- ! inserisco dinamicamente le chat -->
                 <div class="scroll">
-                    <ul class="ps">
+                    <ul class="ps-0">
                         <li v-if="contact.visible"
                             @click="indexChange(index)" 
                             v-for="(contact, index) in contacts"
