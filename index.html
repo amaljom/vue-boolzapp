@@ -94,35 +94,35 @@
                 <div class="background-message scroll">
                     <div class="w-75 mx-auto mt-4 ">
                         <div
-                        v-if="contacts[indexActive].messages.length" 
-                         v-for="(mes,ind) in contacts[indexActive].messages"
-                         class="mb-2 d-flex messagio justify-content-between"
-                         :class="(mes.status==='sent')? 'sent': ''">
-                            <div class="d-flex hover">
-                                <div class="paddingM"> 
-                                    <p class="fs-5 m-2">{{mes.message}}</p>
-                                </div>
-                                <div class="align">
-                                    <i 
-                                    @click="dropVisibilator(ind)"
-                                    class="fa-solid fa-angle-down drop rel">
-                                    <div @mouseleave="indexActiveBox= '' " class="drop3" :class="(indexActiveBox===ind)? 'display': ''" >
-                                        <ul class="list-group">
-                                            <li class="list-group-item p-0 pt-1 text-center">
-                                                <p class="font">Info message</p>
-                                            </li>
-                                            <li class="list-group-item p-0 pt-1 text-center">
-                                                <p @click="delMes(ind)" 
-                                                class="font">Delete messege</p>
-                                            </li>
-                                        </ul>
+                            v-if="contacts[indexActive].messages.length" 
+                            v-for="(mes,ind) in contacts[indexActive].messages"
+                            class="mb-2 d-flex messagio justify-content-between"
+                            :class="(mes.status==='sent')? 'sent': ''">
+                                <div class="d-flex hover">
+                                    <div class="paddingM"> 
+                                        <p class="fs-5 m-2">{{mes.message}}</p>
                                     </div>
-                                    </i>
-                                    <div>
-                                        <span class="font2">{{ newDate(ind) }}</span>
+                                    <div class="align">
+                                        <i 
+                                        @click="dropVisibilator(ind)"
+                                        class="fa-solid fa-angle-down drop rel">
+                                        <div @mouseleave="indexActiveBox= '' " class="drop3" :class="(indexActiveBox===ind)? 'display': ''" >
+                                            <ul class="list-group">
+                                                <li class="list-group-item p-0 pt-1 text-center">
+                                                    <p class="font">Info message</p>
+                                                </li>
+                                                <li class="list-group-item p-0 pt-1 text-center">
+                                                    <p @click="delMes(ind)" 
+                                                    class="font">Delete messege</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        </i>
+                                        <div>
+                                            <span class="font2">{{ newDate(ind) }}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             
                         </div>
                         

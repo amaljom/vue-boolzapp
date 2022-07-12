@@ -261,6 +261,9 @@ const app= new Vue(
                 let long= this.length(index)-1;
                 return contact.messages[long].message;
             }
+        },
+        transform: function(){
+            this.messaggio='';
         }
     }
 });
