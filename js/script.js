@@ -7,7 +7,7 @@ const app= new Vue(
     data:{
         search:'',
         dropVisible:false,
-        messaggio: ' scrivi un messaggio',
+        messaggio: ' Scrivi un messaggio',
         indexActive: 0,
         indexActiveBox: '',
         contacts: [
